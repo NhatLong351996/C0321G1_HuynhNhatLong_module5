@@ -1,0 +1,118 @@
+<div class=" container">
+  <div class="row">
+    <!--<div th:insert="~{/home/home::leftbar}"></div>-->
+    <div class="bg-warning">
+      <!--search-->
+      <form action="/contractDetail/list" class="m-3">
+        <div class="row">
+          <input class="form-control col-9 " type="search" placeholder="name Attach" aria-label="Search"
+                 name="search">
+          <button class="btn btn-outline-secondary col-3 " type="submit">Search</button>
+        </div>
+      </form>
+
+
+
+      <!-- body-->
+      <div class="table-responsive">
+        <table class="table table-hover table-striped">
+          <thead class="thead-dark">
+          <th class="text-center">No</th>
+          <th class="text-center">Customer</th>
+          <th class="text-center">Service</th>
+          <th class="text-center">Attach Service</th>
+          <th class="text-center">Quantity</th>
+          <th class="text-center">Cost Service</th>
+          <th class="text-center">Cost Attach Service</th>
+          <th class="text-center">Total Money</th>
+          <th scope="col">Add New Attach Service</th>
+          <th scope="col">Delete</th>
+          <th scope="col">View</th>
+          </thead>
+          <!--<tbody>
+          <th:block th:each="contractDetail,status:${contractDetails}">
+            <tr>
+              <td></td>
+              <td th:text="${status.count}"></td>
+              <td th:text="${contractDetail.getNameCustomer()}"></td>
+              <td th:text="${contractDetail.getNameService()}"></td>
+              <td th:text="${contractDetail.getNameAttachService()}"></td>
+              <td th:text="${contractDetail.getQuantity()}"></td>
+              <td th:text="${contractDetail.getCosService()}"></td>
+              <td th:text="${contractDetail.getCostAttach()}"></td>
+              <td th:text="${contractDetail.getCostAttach()+contractDetail.getCosService()}"></td>
+              <td><a th:href="@{/contractDetail/create/__${contractDetail.idContractDetail}__ }">
+                <button type="button" class="btn btn-secondary">Add New Attach Service</button>
+              </a></td>
+              <td>
+                <button type="button" class="btn btn-danger" data-toggle="modal"
+                        data-target="#exampleModal"
+                        th:onclick="|deleteContractDetail(${contractDetail.idContractDetail})|">
+                  Delete
+                </button>
+              </td>
+              <td><a th:href="@{/contractDetail/view/__${contractDetail.idContractDetail}__ }">
+                <button type="button" class="btn btn-warning">View</button>
+              </a></td>
+            </tr>
+          </th:block>
+          </tbody>-->
+        </table>
+
+       <!-- <div>
+          <a class="btn btn-outline-secondary"
+             th:href="@{/contractDetail/list(page=${contractDetails.number - 1},search=${search})}"
+             th:if="${contractDetails.hasPrevious()}"> <span style="font-weight: bold"> < </span>
+          </a>
+          <span th:each="p : ${#numbers.sequence(0,contractDetails.totalPages -1)}"
+                th:if="${contractDetails.hasContent()}">
+                    <a class="btn btn-outline-secondary"
+                       th:href="@{/contractDetail/list(page=${p},search=${search})}" th:text="${p +1}"
+                       th:if="${(p >(contractDetails.number)-1)&&(p <(contractDetails.number+2))}"></a>
+                    </span>
+          <a class="btn btn-outline-secondary"
+             th:href="@{/contractDetail/list(page=${contractDetails.number + 1},search=${search})}"
+             th:if="${contractDetails.hasNext()}">
+            <span style="font-weight: bold"> > </span>
+          </a>
+        </div>-->
+      </div>
+
+
+      <!-- body-->
+    </div>
+  </div>
+  <!--model-->
+  <form action="/contractDetail/delete" method="post">
+    <div class="modal" id="exampleModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Delete</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <input type="hidden" id="id" name="id">
+          <div class="modal-body">
+            <p>Do you want to delete</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-danger">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+<script>
+  function deleteContractDetail(id) {
+    document.getElementById('id').value = id;
+  }
+</script>
+
+
+
