@@ -1,0 +1,14 @@
+
+<h3 class="text-center">color works!</h3>
+  <div class="text-center " >
+    <select [(ngModel)]="color"  [style.background-color]="color">
+      <option class="bg-danger" value="red">Red</option>
+      <option class="bg-warning" value="yellow">Yellow</option>
+      <option class="bg-primary " value="blue" selected>Blue</option>
+    </select>
+  </div>
+<div class="mt-5">
+  <div [style.background-color]="color" class=" m-lg-auto" style="width: 100px ;height: 100px; background-color: blue"></div>
+</div>
+
+
