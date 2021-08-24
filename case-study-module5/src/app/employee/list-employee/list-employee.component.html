@@ -1,60 +1,54 @@
 <div class=" container">
   <div class="row">
     <!--<div th:insert="~{/home/home::leftbar}"></div>-->
-    <div class="bg-warning">
+    <div>
       <!--search-->
-      <form action="/employee" class="m-3">
-        <div class="row">
-          <input class="form-control col-9 " type="search" placeholder="Search" aria-label="Search"
-                 name="search">
-          <button class="btn btn-outline-secondary col-3 " type="submit">Search</button>
+      <h3 class="text-decoration-underline">List Employee</h3>
+      <a href="/customer/create" >
+        <button type="button" class="btn btn-secondary mt-2 mb-3">Create New Employee</button>
+      </a>
+      <div class="row ">
+        <div class="col-9"><input class="form-control mb-3" type="search" placeholder="Search" aria-label="Search"
+                                  name="search"></div>
+        <div class="col-3">
+          <button class="btn btn-outline-secondary col-3 form-control" type="submit">Search</button>
         </div>
-        <div class="alert alert-light " role="alert">
-          <strong  style="color: red ;margin: 5px"></strong>
-        </div>
-        <a href="/employee/create">
-          <button type="button" class="btn btn-secondary mt-2 ">Create New Employee</button>
-        </a>
-      </form>
+      </div>
 
 
 
       <!-- body-->
       <div class="table-responsive">
         <table class="table table-hover table-striped">
-          <thead class="thead-dark">
-          <th class="text-center">No</th>
-          <th class="text-center">Name</th>
-          <th class="text-center">Position</th>
-          <th class="text-center">Division</th>
-          <th scope="col">Edit</th>
-          <th scope="col">Delete</th>
-          <th scope="col">View</th>
+          <thead class="thead-dark text-center">
+          <th>No</th>
+          <th>Name</th>
+          <th>Position</th>
+          <th>Division</th>
+          <th>Edit</th>
+          <th>Delete</th>
+          <th>View</th>
           </thead>
-          <!--<tbody>
-          <th:block th:each="employee,status:${employees}">
-            <tr>
-              <td></td>
-              <td th:text="${status.count}"></td>
-              <td th:text="${employee.nameEmployee}"></td>
-              <td th:text="${employee.positionEmployee.namePosition}"></td>
-              <td th:text="${employee.employeeDivision.nameDivision}"></td>
-              <td><a th:href="@{/employee/edit/__${employee.idEmployee}__ }">
+          <tbody>
+            <tr *ngFor="let ob of listEmployee; index as i" class="text-center">
+              <td>{{i+1}}</td>
+              <td>{{ob.nameEmployee}}</td>
+              <td>{{ob.id_position}}</td>
+              <td>{{ob.id_division}}</td>
+              <td><a>
                 <button type="button" class="btn btn-secondary">Edit</button>
               </a></td>
               <td>
                 <button type="button" class="btn btn-danger" data-toggle="modal"
-                        data-target="#exampleModal"
-                        th:onclick="|deleteEmployee(${employee.idEmployee})|">
+                        data-target="#exampleModal">
                   Delete
                 </button>
               </td>
-              <td><a th:href="@{/employee/view/__${employee.idEmployee}__ }">
+              <td><a>
                 <button type="button" class="btn btn-warning">View</button>
               </a></td>
             </tr>
-          </th:block>
-          </tbody>-->
+          </tbody>
         </table>
 
        <!-- <div>

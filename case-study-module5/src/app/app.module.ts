@@ -15,6 +15,7 @@ import { ListEmployeeComponent } from './employee/list-employee/list-employee.co
 import { CreateServiceComponent } from './service/create-service/create-service.component';
 import { ListServiceComponent } from './service/list-service/list-service.component';
 import { ListContractDetailComponent } from './contract-detail/list-contract-detail/list-contract-detail.component';
+import { ListContractComponent } from './contract/list-contract/list-contract.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ListContractDetailComponent } from './contract-detail/list-contract-det
     ListEmployeeComponent,
     CreateServiceComponent,
     ListServiceComponent,
-    ListContractDetailComponent
+    ListContractDetailComponent,
+    ListContractComponent
   ],
   imports: [
     BrowserModule,
