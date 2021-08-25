@@ -1,0 +1,23 @@
+<h2 class="text-center">
+  Todo App
+</h2>
+<div class="col-md-8 offset-md-2">
+  <input type="text" class="form-control" [formControl]="content" (change)="change()">
+  <ul>
+    <li (click)="toggleTodo(i)"
+        [class.complete]="todo.complete"
+        *ngFor="let todo of todos; index as i">
+      {{todo.content}}
+    </li>
+  </ul>
+</div>
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+    Dropdown button
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+  </ul>
+</div>

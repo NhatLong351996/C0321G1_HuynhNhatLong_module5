@@ -1,5 +1,5 @@
 {
-  "name": "case-study-module5",
+  "name": "angular-name-card",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -19,11 +19,7 @@
     "@angular/platform-browser": "~9.1.6",
     "@angular/platform-browser-dynamic": "~9.1.6",
     "@angular/router": "~9.1.6",
-    "@popperjs/core": "^2.9.3",
     "bootstrap": "^5.1.0",
-    "jquery": "^3.6.0",
-    "mdb-ui-kit": "^3.9.0",
-    "popper.js": "^1.16.1",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
