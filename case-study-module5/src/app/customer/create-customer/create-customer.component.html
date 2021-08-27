@@ -1,52 +1,76 @@
+<h3 class="text-center text-decoration-underline">Create Customer</h3>
 <div class=" container">
   <div class="row">
-    <!--<div th:insert="~{/home/home::leftbar}"></div>-->
-    <!--<div class="col-4" style="background-color: #494f54">
-      &lt;!&ndash;<div th:replace="~{/home/home::leftbar}"></div>&ndash;&gt;
-    </div>-->
-    <div class=" bg-light">
+    <form [formGroup]="formCreateCustomer">
+      <div class="form-group">
+        <label class="text-uppercase text-weight">+ NameCustomer</label>
+        <input type="text" class="form-control " formControlName="nameCustomer">
+        <div class="form-text" *ngIf="formCreateCustomer.get('nameCustomer').hasError('required')
+     && formCreateCustomer.get('nameCustomer').touched" style="color: red">Not null
+        </div>
       </div>
-      <!-- body-->
-      <!--<form th:action="@{/customer/create}" method="post" th:object="${customerDto}">-->
-        <div class="form-group">
-          <label class="text-uppercase">NameCustomer</label>
-          <input type="text" class="form-control" >
+      <div class="form-group">
+        <label class="text-uppercase text-weight">+ Customer's Code</label>
+        <input type="text" class="form-control" formControlName="customerCode">
+        <div class="form-text" *ngIf="formCreateCustomer.get('customerCode').hasError('required')
+     && formCreateCustomer.get('customerCode').touched" style="color: red">Not null
         </div>
-        <div class="form-group">
-          <label class="text-uppercase">Customer's Code</label>
-          <input type="text" class="form-control">
+        <div class="form-text" *ngIf="formCreateCustomer.get('customerCode').hasError('pattern')"
+             style="color: red">Must be in the right format KH-xxxx
         </div>
-        <div class="form-group">
-          <label class="text-uppercase">Type Customer</label>
-          <select  class="form-control">
-            <option>
-            </option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label class="text-uppercase">Date Of Birth</label>
-          <input type="date" class="form-control">
-        </div>
-        <div class="form-group">
-          <label class="text-uppercase">Card </label>
-          <input type="text" class="form-control">
-        </div>
-        <div class="form-group">
-          <label class="text-uppercase">Phone Number </label>
-          <input type="number" class="form-control">
-        </div>
-        <div class="form-group">
-          <label class="text-uppercase">Email </label>
-          <input type="text" class="form-control">
-        </div>
-        <div class="form-group">
-          <label class="text-uppercase">Address </label>
-          <input type="text" class="form-control">
-        </div>
-        <button type="submit" class="btn btn-primary">Create</button>
-      <!--</form>-->
+      </div>
+      <div class="form-group">
+        <label class="text-uppercase text-weight">+ Type Customer</label>
+        <select class="form-select " formControlName="idCustomerType">
+          <option *ngFor="let choice of listTypeCustomer" value="{{choice}}">{{choice}}</option>
+        </select>
+        <div class="form-text" *ngIf="formCreateCustomer.get('idCustomerType').hasError('required')
+     && formCreateCustomer.get('idCustomerType').touched" style="color: red">Not null </div>
+      </div>
+      <div class="form-group">
+        <label class="text-uppercase text-weight">+ Date Of Birth</label>
+        <input type="date" class="form-control" formControlName="dateOfBirthCustomer">
+        <div class="form-text" *ngIf="formCreateCustomer.get('dateOfBirthCustomer').hasError('date')"
+             style="color: red">Year must > year recent</div>
+        <div class="form-text" *ngIf="formCreateCustomer.get('dateOfBirthCustomer').hasError('required')
+     && formCreateCustomer.get('dateOfBirthCustomer').touched" style="color: red">Not null </div>
+      </div>
+      <div class="form-group">
+        <label class="text-uppercase text-weight">+ Card </label>
+        <input type="text" class="form-control" formControlName="cardCustomer">
+        <div class="form-text" *ngIf="formCreateCustomer.get('cardCustomer').hasError('required')
+     && formCreateCustomer.get('cardCustomer').touched" style="color: red">Not null </div>
+        <div class="form-text" *ngIf="formCreateCustomer.get('cardCustomer').hasError('pattern')"
+             style="color: red">9 or 12 Number</div>
+      </div>
+      <div class="form-group">
+        <label class="text-uppercase text-weight">+ Phone Number </label>
+        <input type="text" class="form-control" formControlName="phoneNumberCustomer">
+        <div class="form-text" *ngIf="formCreateCustomer.get('phoneNumberCustomer').hasError('required')
+     && formCreateCustomer.get('phoneNumberCustomer').touched" style="color: red">Not null </div>
+        <div class="form-text" *ngIf="formCreateCustomer.get('phoneNumberCustomer').hasError('pattern')"
+             style="color: red">090xxxxxxx or 091xxxxxxx or (84)+90xxxxxxx or (84)+91xxxxxxx</div>
+      </div>
+      <div class="form-group">
+        <label class="text-uppercase text-weight">+ Email </label>
+        <input type="text" class="form-control" formControlName="emailCustomer">
+        <div class="form-text" *ngIf="formCreateCustomer.get('emailCustomer').hasError('required')
+     && formCreateCustomer.get('emailCustomer').touched" style="color: red">Not null </div>
+        <div class="form-text" *ngIf="formCreateCustomer.get('emailCustomer').hasError('email')"
+             style="color: red">Must be in the right format 'abc@gmail.com'</div>
+      </div>
+
+      <div class="form-group">
+        <label class="text-uppercase text-weight">+ Address </label>
+        <input type="text" class="form-control" formControlName="addressCustomer">
+        <div class="form-text" *ngIf="formCreateCustomer.get('addressCustomer').hasError('required')
+     && formCreateCustomer.get('addressCustomer').touched" style="color: red">Not null </div>
+      </div>
+      <button type="submit" class="btn btn-warning mb-3">+Create</button>
+    </form>
+    <!--</form>-->
 
 
-    </div>
   </div>
+</div>
 

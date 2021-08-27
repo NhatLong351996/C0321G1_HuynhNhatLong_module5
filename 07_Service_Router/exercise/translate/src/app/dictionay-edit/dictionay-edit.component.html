@@ -1,0 +1,6 @@
+<p>dictionay-edit works!</p>
+<form [formGroup]="formEdit" (ngSubmit)="update()">
+  word: <input formControlName="word">
+  mean: <input formControlName="mean">
+  <button>Edit</button>
+</form>

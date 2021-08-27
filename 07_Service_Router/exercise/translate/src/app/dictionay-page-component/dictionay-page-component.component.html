@@ -1,0 +1,17 @@
+<h1>List Word</h1>
+<table>
+  <tr>
+    <td>No</td>
+    <td>Word</td>
+    <td>Detail</td>
+    <td>update</td>
+    <td>delete</td>
+  </tr>
+  <tr *ngFor="let ob of arrarWord; index as i">
+    <td>{{i + 1}}</td>
+    <td>{{ob.word}}</td>
+    <td><a [routerLink]="['/detail-word',ob.id]">detail</a></td>
+    <td><a [routerLink]="['/update-word',ob.id]">update</a></td>
+    <td><a [routerLink]="['/delete-word',ob.id]">delete</a></td>
+  </tr>
+</table>

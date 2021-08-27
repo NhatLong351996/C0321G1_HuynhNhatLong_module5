@@ -16,6 +16,7 @@ import { CreateServiceComponent } from './service/create-service/create-service.
 import { ListServiceComponent } from './service/list-service/list-service.component';
 import { ListContractDetailComponent } from './contract-detail/list-contract-detail/list-contract-detail.component';
 import { ListContractComponent } from './contract/list-contract/list-contract.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ListContractComponent } from './contract/list-contract/list-contract.co
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

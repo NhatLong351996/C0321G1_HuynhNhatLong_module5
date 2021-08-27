@@ -16,10 +16,10 @@ export class SignInComponent implements OnInit {
   ngOnInit(): void {
     this.formSignUp = this.fb.group({
       email: ['', [Validators.required,Validators.email]],
-      passWord: ['',[passWordValid,Validators.required,Validators.minLength(6)]],
+      passWord: new FormControl('',[passWordValid,Validators.required,Validators.minLength(6)]),
       country: ['',Validators.required],
-      age: ['',Validators.required,Validators.min(18)],
-      phone: ['',Validators.required,Validators.pattern('^\\+84\\d{9,10}$')],
+      age: new FormControl('',[Validators.required,Validators.min(18)]),
+      phone: new FormControl('',[Validators.required,Validators.pattern('^\\+84\\d{9,10}$')]),
       gender: ['',Validators.required],
     });
     console.log(this.formSignUp)

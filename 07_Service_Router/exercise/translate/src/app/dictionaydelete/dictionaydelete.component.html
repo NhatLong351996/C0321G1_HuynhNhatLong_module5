@@ -1,0 +1,8 @@
+<p>dictionaydelete works!</p>
+<form [formGroup]="formDelete" (ngSubmit)="delete()">
+<p>View</p>
+word: <input formControlName="word">
+<br>
+mean: <input formControlName="mean">
+  <button>Delete</button>
+</form>
