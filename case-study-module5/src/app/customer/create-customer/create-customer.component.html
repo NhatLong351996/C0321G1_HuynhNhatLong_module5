@@ -1,7 +1,7 @@
 <h3 class="text-center text-decoration-underline">Create Customer</h3>
 <div class=" container">
   <div class="row">
-    <form [formGroup]="formCreateCustomer">
+    <form [formGroup]="formCreateCustomer" (ngSubmit)="create()">
       <div class="form-group">
         <label class="text-uppercase text-weight">+ NameCustomer</label>
         <input type="text" class="form-control " formControlName="nameCustomer">
@@ -21,11 +21,11 @@
       </div>
       <div class="form-group">
         <label class="text-uppercase text-weight">+ Type Customer</label>
-        <select class="form-select " formControlName="idCustomerType">
+        <select class="form-select " formControlName="customerType">
           <option *ngFor="let choice of listTypeCustomer" value="{{choice}}">{{choice}}</option>
         </select>
-        <div class="form-text" *ngIf="formCreateCustomer.get('idCustomerType').hasError('required')
-     && formCreateCustomer.get('idCustomerType').touched" style="color: red">Not null </div>
+        <div class="form-text" *ngIf="formCreateCustomer.get('customerType').hasError('required')
+     && formCreateCustomer.get('customerType').touched" style="color: red">Not null </div>
       </div>
       <div class="form-group">
         <label class="text-uppercase text-weight">+ Date Of Birth</label>
@@ -66,7 +66,7 @@
         <div class="form-text" *ngIf="formCreateCustomer.get('addressCustomer').hasError('required')
      && formCreateCustomer.get('addressCustomer').touched" style="color: red">Not null </div>
       </div>
-      <button type="submit" class="btn btn-warning mb-3">+Create</button>
+      <button class="btn btn-warning mb-3">+Create</button>
     </form>
     <!--</form>-->
 

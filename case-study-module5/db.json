@@ -1,0 +1,43 @@
+{
+  "customerList": [
+    {
+      "nameCustomer": "Longd",
+      "customerCode": "KH-1234",
+      "dateOfBirthCustomer": "1996-08-12",
+      "cardCustomer": "123455689",
+      "phoneNumberCustomer": "0908989898",
+      "emailCustomer": "hh@mail.com",
+      "addressCustomer": "Ha Noi",
+      "customerType": "Dynamic",
+      "id": 1
+    }
+  ],
+  "employeeList": [
+    {
+      "nameEmployee": "Thoa",
+      "dateOfBirth": "2019-12-30",
+      "card": "123445667",
+      "salary": 15000000,
+      "phoneNumber": "0901234567",
+      "email": "fef@jfj.djd",
+      "addressEmployee": "HCM",
+      "position": "waiter",
+      "education_degree": "Intermediate",
+      "division": "Administration",
+      "id": 2
+    },
+    {
+      "nameEmployee": "Tung",
+      "dateOfBirth": "2020-08-13",
+      "card": "123333333",
+      "salary": 10000000,
+      "phoneNumber": "0906767676",
+      "email": "huy@gmail.com",
+      "addressEmployee": "Da Nang",
+      "position": "manager",
+      "education_degree": "College",
+      "division": "Management",
+      "id": 3
+    }
+  ]
+}

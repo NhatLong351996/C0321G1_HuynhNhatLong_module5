@@ -1,16 +1,16 @@
 <div class=" container">
-  <div class="row">
     <div>
       <!--search-->
       <h3 class="text-decoration-underline">List Customer</h3>
       <a href="/customer/create" >
         <button type="button" class="btn btn-secondary mt-2 mb-3">Create New Customer</button>
       </a>
-      <div class="row ">
+
+      <div class="row">
         <div class="col-9"><input class="form-control mb-3" type="search" placeholder="Search" aria-label="Search"
                                   name="search"></div>
         <div class="col-3">
-          <button class="btn btn-outline-secondary col-3 form-control" type="submit">Search</button>
+          <button class="btn btn-outline-secondary form-control" type="submit">Search</button>
         </div>
       </div>
 
@@ -32,73 +32,26 @@
             <td class="text-center">{{i + 1}}</td>
             <td class="text-center">{{ob.nameCustomer}}</td>
             <td class="text-center">{{ob.customerCode}}</td>
-            <td class="text-center">{{ob.idCustomerType}}</td>
-            <td class="text-center"><a>
-              <button type="button" class="btn btn-secondary">Edit</button>
+            <td class="text-center">{{ob.customerType}}</td>
+            <td class="text-center"><a [routerLink]="['/customer/edit',ob.id]">
+              <button type="button" class="btn btn-secondary" >Edit</button>
             </a></td>
-            <td class="text-center">
-              <button type="button" class="btn btn-danger" data-toggle="modal"
-                      data-target="#exampleModal">
+            <td class="text-center" >
+             <a [routerLink]="['/customer/delete',ob.id]"> <button type="button" class="btn btn-danger" >
                 Delete
-              </button>
+              </button></a>
             </td>
-            <td class="text-center"><a>
-              <button type="button" class="btn btn-warning">View</button>
+            <td class="text-center"><a [routerLink]="['/customer/edit',ob.id]">
+              <button type="button" class="btn btn-warning" >View</button>
             </a></td>
           </tr>
           </tbody>
         </table>
 
-        <!--<div>
-          <a class="btn btn-outline-secondary"
-             th:href="@{/customer(page=${customers.number - 1},search=${search})}"
-             th:if="${customers.hasPrevious()}"> <span style="font-weight: bold"> < </span>
-          </a>
-          <span th:each="p : ${#numbers.sequence(0,customers.totalPages -1)}"
-                th:if="${customers.hasContent()}">
-                    <a class="btn btn-outline-secondary"
-                       th:href="@{/customer(page=${p},search=${search})}" th:text="${p +1}"
-                       th:if="${(p >(customers.number)-1)&&(p <(customers.number+2))}"></a>
-                    </span>
-          <a class="btn btn-outline-secondary"
-             th:href="@{/customer(page=${customers.number + 1},search=${search})}"
-             th:if="${customers.hasNext()}">
-            <span style="font-weight: bold"> > </span>
-          </a>
-        </div>
-      </div>-->
-        <!--ngx-pagination-->
 
-        <!-- body-->
       </div>
     </div>
-    <!--model-->
-    <form action="/customer/delete" method="post">
-      <div class="modal" id="exampleModal" tabindex="-1">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Modal title</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <input type="hidden" id="id" name="id">
-            <div class="modal-body">
-              <p>Do you want to delete</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-danger">Delete</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </form>
+
   </div>
-  <script>
-    function deleteCustomer(id) {
-      document.getElementById('id').value = id;
-    }
-  </script>
-</div>
+
+

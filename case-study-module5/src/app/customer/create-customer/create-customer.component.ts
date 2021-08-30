@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {CustomerService} from '../server/customer.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-create-customer',
@@ -10,7 +12,12 @@ export class CreateCustomerComponent implements OnInit {
   formCreateCustomer: FormGroup;
   listTypeCustomer = ['Dynamic','Gold','Medium','Vip']
 
-  constructor() {
+  constructor(private customerService: CustomerService,
+              private route: Router) {
+    console.log(this.formCreateCustomer);
+  }
+
+  ngOnInit(): void {
     this.formCreateCustomer = new FormGroup({
       nameCustomer: new FormControl('', Validators.required),
       customerCode: new FormControl('', [Validators.pattern('^KH-\\d{4}$'), Validators.required]),
@@ -20,12 +27,14 @@ export class CreateCustomerComponent implements OnInit {
       pattern('^(090\\d{7}|091\\d{7}|8490\\d{7}|8491\\d{7})$')]),
       emailCustomer: new FormControl('',[Validators.email,Validators.required]),
       addressCustomer: new FormControl('',Validators.required),
-      idCustomerType: new FormControl('',Validators.required)
+      customerType: new FormControl('',Validators.required)
     });
-    console.log(this.formCreateCustomer);
   }
-
-  ngOnInit(): void {
+  create(){
+    this.customerService.create(this.formCreateCustomer.value).subscribe(value => {
+      alert(value.nameCustomer+" create success"),
+        this.route.navigateByUrl("/customer/list")
+    })
   }
 
 }

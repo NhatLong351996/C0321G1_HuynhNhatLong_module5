@@ -1,0 +1,63 @@
+{
+  "categoryList": [
+    {
+      "name": "Book1",
+      "id": 1
+    },
+    {
+      "name": "Book2",
+      "id": 2
+    }
+  ],
+  "productList": [
+    {
+      "id": 1,
+      "name": "book1",
+      "price": 20000,
+      "description": "ok",
+      "category": {
+        "name": "Book",
+        "id": 1
+      }
+    },
+    {
+      "id": 2,
+      "name": "book2",
+      "price": 10000,
+      "description": "ok",
+      "category": {
+        "name": "Book2",
+        "id": 2
+      }
+    },
+    {
+      "id": 3,
+      "name": "book3",
+      "price": 30000,
+      "description": "No ok",
+      "category": {
+        "name": "Book",
+        "id": 1
+      }
+    },
+    {
+      "id": 4,
+      "name": "book4",
+      "price": 50000,
+      "description": "No ok",
+      "category": {
+        "name": "Book2",
+        "id": 2
+      }
+    },
+    {
+      "name": "long",
+      "price": 124,
+      "description": "ok",
+      "category": {
+        "name": "Book1"
+      },
+      "id": 5
+    }
+  ]
+}

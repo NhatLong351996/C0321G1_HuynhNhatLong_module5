@@ -1,5 +1,5 @@
 export interface IEmployee {
-  idEmployee: number;
+  id: number;
   nameEmployee: string;
   dateOfBirth: string;
   card: string;
@@ -7,7 +7,7 @@ export interface IEmployee {
   phoneNumber: string;
   email: string;
   addressEmployee: string;
-  id_position: number;
-  id_education_degree: number;
-  id_division: number;
+  position: string;
+  education_degree: string;
+  division: string;
 }

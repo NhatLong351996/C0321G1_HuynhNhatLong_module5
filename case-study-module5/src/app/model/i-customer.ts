@@ -1,6 +1,6 @@
 export interface ICustomer {
-  idCustomer: number;
-  idCustomerType: number;
+  id: number;
+  customerType: string;
   customerCode: string;
   nameCustomer: string;
   dateOfBirthCustomer: string;

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {EmployeeService} from '../../customer/server/employee.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-create-employee',
@@ -14,7 +16,11 @@ export class CreateEmployeeComponent implements OnInit {
   listEducation = ['Intermediate','College','Undergraduate','Graduate'];
 
 
-  constructor() {
+  constructor(private employeeService:EmployeeService,
+              private route:Router) {
+  }
+
+  ngOnInit(): void {
     this.formCreateEmployee = new FormGroup({
       nameEmployee: new FormControl('',[Validators.required]),
       dateOfBirth: new FormControl('',[Validators.required,dateOfBirthValid]),
@@ -25,15 +31,18 @@ export class CreateEmployeeComponent implements OnInit {
         Validators.pattern('^(090\\d{7}|091\\d{7}|8490\\d{7}|8491\\d{7})$')]),
       email: new FormControl('',[Validators.required,Validators.email]),
       addressEmployee: new FormControl('',Validators.required),
-      id_position: new FormControl('',[Validators.required]),
-      id_education_degree: new FormControl('',Validators.required),
-      id_division: new FormControl('',Validators.required)
+      position: new FormControl('',[Validators.required]),
+      education_degree: new FormControl('',Validators.required),
+      division: new FormControl('',Validators.required)
     })
   }
 
-  ngOnInit(): void {
+  create() {
+    this.employeeService.create(this.formCreateEmployee.value).subscribe(value => {
+      alert("🐝"+value.nameEmployee+" create success");
+      this.route.navigateByUrl("/employee/list")
+    })
   }
-
 }
 function dateOfBirthValid(fc: FormControl): any {
   return fc.value.substr(0, 4) < new Date().getFullYear() ? null : {date: true};

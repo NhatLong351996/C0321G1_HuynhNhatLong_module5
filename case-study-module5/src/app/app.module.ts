@@ -17,6 +17,11 @@ import { ListServiceComponent } from './service/list-service/list-service.compon
 import { ListContractDetailComponent } from './contract-detail/list-contract-detail/list-contract-detail.component';
 import { ListContractComponent } from './contract/list-contract/list-contract.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import { EditCustomerComponent } from './customer/edit-customer/edit-customer.component';
+import { DeleteCustomerComponent } from './customer/delete-customer/delete-customer.component';
+import {HttpClientModule} from '@angular/common/http';
+import { EditEmployeeComponent } from './employee/edit-employee/edit-employee.component';
+import { DeleteEmployeeComponent } from './employee/delete-employee/delete-employee.component';
 
 @NgModule({
   declarations: [
@@ -33,12 +38,17 @@ import {ReactiveFormsModule} from '@angular/forms';
     CreateServiceComponent,
     ListServiceComponent,
     ListContractDetailComponent,
-    ListContractComponent
+    ListContractComponent,
+    EditCustomerComponent,
+    DeleteCustomerComponent,
+    EditEmployeeComponent,
+    DeleteEmployeeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
