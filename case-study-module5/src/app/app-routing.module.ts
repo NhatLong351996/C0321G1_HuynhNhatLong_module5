@@ -9,6 +9,10 @@ import {ListEmployeeComponent} from './employee/list-employee/list-employee.comp
 import {CreateEmployeeComponent} from './employee/create-employee/create-employee.component';
 import {EditEmployeeComponent} from './employee/edit-employee/edit-employee.component';
 import {DeleteEmployeeComponent} from './employee/delete-employee/delete-employee.component';
+import {ListCinemaComponent} from './cinema/list-cinema/list-cinema.component';
+import {CreateCinemaComponent} from './cinema/create-cinema/create-cinema.component';
+import {EditCinemaComponent} from './cinema/edit-cinema/edit-cinema.component';
+import {DeleteCinemaComponent} from './cinema/delete-cinema/delete-cinema.component';
 
 
 const routes: Routes = [
@@ -21,6 +25,10 @@ const routes: Routes = [
   {path:"employee/create",component:CreateEmployeeComponent},
   {path:"employee/edit/:id",component:EditEmployeeComponent},
   {path:"employee/delete/:id",component:DeleteEmployeeComponent},
+  {path:"cinema/list",component:ListCinemaComponent},
+  {path:"cinema/create",component:CreateCinemaComponent},
+  {path:"cinema/edit/:id",component:EditCinemaComponent},
+  {path:"cinema/delete/:id",component:DeleteCinemaComponent},
 ];
 
 @NgModule({

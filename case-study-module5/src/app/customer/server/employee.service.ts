@@ -26,4 +26,7 @@ export class EmployeeService {
   delete(id:number):Observable<IEmployee>{
     return this.httpClient.delete<IEmployee>(this.API_URL_EMPLOYEE+"/"+id);
   }
+  searchByName(name): Observable<IEmployee[]>{
+    return this.httpClient.get<IEmployee[]>(this.API_URL_EMPLOYEE+"?nameEmployee_like="+name)
+  }
 }

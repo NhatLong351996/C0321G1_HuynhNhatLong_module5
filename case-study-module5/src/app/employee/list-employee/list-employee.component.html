@@ -9,9 +9,9 @@
       </a>
       <div class="row ">
         <div class="col-9"><input class="form-control mb-3" type="search" placeholder="Search" aria-label="Search"
-                                  name="search"></div>
+                                  name="search" [(ngModel)]="search"></div>
         <div class="col-3">
-          <button class="btn btn-outline-secondary form-control" type="submit">🐝 Search</button>
+          <button class="btn btn-outline-secondary form-control" type="submit" (click)="searchByName()">🐝 Search</button>
         </div>
       </div>
 
@@ -30,8 +30,8 @@
           <th>View</th>
           </thead>
           <tbody>
-            <tr *ngFor="let ob of employeeList; index as i" class="text-center">
-              <td>{{i+1}}</td>
+            <tr *ngFor="let ob of employeeList | paginate:{itemsPerPage:1,currentPage:p}; index as i" class="text-center">
+              <td>{{ob.id-1}}</td>
               <td>{{ob.nameEmployee}}</td>
               <td>{{ob.position}}</td>
               <td>{{ob.division}}</td>
@@ -51,6 +51,7 @@
             </tr>
           </tbody>
         </table>
+        <pagination-controls class="pagination" (pageChange)="p = $event"></pagination-controls>
       </div>
     </div>
   </div>

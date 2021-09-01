@@ -9,6 +9,8 @@ import {IEmployee} from '../../model/i-employee';
 })
 export class ListEmployeeComponent implements OnInit {
   employeeList: IEmployee[] = [];
+  search = '';
+  p: any;
   constructor(private employeeService:EmployeeService) {
     employeeService.getAll().subscribe(value => {
       this.employeeList = value;
@@ -18,4 +20,10 @@ export class ListEmployeeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  searchByName() {
+    return this.employeeService.searchByName(this.search).subscribe(value => {
+      this.employeeList = value;
+      this.p=1;
+    })
+  }
 }

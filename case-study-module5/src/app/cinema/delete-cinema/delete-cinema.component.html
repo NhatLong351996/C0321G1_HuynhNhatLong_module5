@@ -1,0 +1,40 @@
+<h3 class="text-center text-decoration-underline">Delete Cinema</h3>
+<p class="text-center" >🐝{{date|date: 'dd/MM/yyyy'}}</p>
+<div class=" container">
+  <div class="row">
+    <div>
+      <form [formGroup]="formCreateCinema" (ngSubmit)="delete()">
+        <div class="form-group">
+          <label class="text-uppercase text-weight">🐝 Code</label>
+          <input disabled type="text" class="form-control" formControlName="code">
+          <div class="form-text" *ngIf="formCreateCinema.get('code')
+          .hasError('pattern')" style="color: red">CI-xxxx</div>
+        </div>
+        <div class="form-group">
+          <label class="text-uppercase text-weight">🐝 Name Firm</label>
+          <select disabled class="form-select" formControlName="nameFirm">
+            <option *ngFor="let list of listFirm" value="{{list}}">{{list}}</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="text-uppercase text-weight">🐝 Date</label>
+          <input disabled type="date" class="form-control" formControlName="date">
+          <div class="form-text" *ngIf="formCreateCinema.get('date')
+          .hasError('date')" style="color: red"> must > date now</div>
+        </div>
+        <div class="form-group">
+          <label class="text-uppercase text-weight">🐝 Ticket</label>
+          <input disabled type="text" class="form-control" formControlName="ticket">
+          <div class="form-text" *ngIf="formCreateCinema.get('ticket')
+          .hasError('min')" style="color: red"> must > 0</div>
+        </div>
+
+
+        <button class="btn btn-warning mb-3 text-weight" [disabled]="formCreateCinema.invalid">
+          🐝 Delete Cinema</button>
+      </form>
+    </div>
+  </div>
+
+</div>

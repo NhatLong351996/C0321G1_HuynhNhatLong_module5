@@ -16,12 +16,17 @@ import { CreateServiceComponent } from './service/create-service/create-service.
 import { ListServiceComponent } from './service/list-service/list-service.component';
 import { ListContractDetailComponent } from './contract-detail/list-contract-detail/list-contract-detail.component';
 import { ListContractComponent } from './contract/list-contract/list-contract.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { EditCustomerComponent } from './customer/edit-customer/edit-customer.component';
 import { DeleteCustomerComponent } from './customer/delete-customer/delete-customer.component';
 import {HttpClientModule} from '@angular/common/http';
 import { EditEmployeeComponent } from './employee/edit-employee/edit-employee.component';
 import { DeleteEmployeeComponent } from './employee/delete-employee/delete-employee.component';
+import { CreateCinemaComponent } from './cinema/create-cinema/create-cinema.component';
+import { EditCinemaComponent } from './cinema/edit-cinema/edit-cinema.component';
+import { DeleteCinemaComponent } from './cinema/delete-cinema/delete-cinema.component';
+import { ListCinemaComponent } from './cinema/list-cinema/list-cinema.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -43,12 +48,18 @@ import { DeleteEmployeeComponent } from './employee/delete-employee/delete-emplo
     DeleteCustomerComponent,
     EditEmployeeComponent,
     DeleteEmployeeComponent,
+    CreateCinemaComponent,
+    EditCinemaComponent,
+    DeleteCinemaComponent,
+    ListCinemaComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

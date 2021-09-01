@@ -14,13 +14,13 @@
   ],
   "employeeList": [
     {
-      "nameEmployee": "Thoa",
+      "nameEmployee": "Thoaoo",
       "dateOfBirth": "2019-12-30",
-      "card": "123445667",
+      "card": "123445668",
       "salary": 15000000,
-      "phoneNumber": "0901234567",
+      "phoneNumber": "0901234569",
       "email": "fef@jfj.djd",
-      "addressEmployee": "HCM",
+      "addressEmployee": "DN",
       "position": "waiter",
       "education_degree": "Intermediate",
       "division": "Administration",
@@ -38,6 +38,29 @@
       "education_degree": "College",
       "division": "Management",
       "id": 3
+    }
+  ],
+  "listCinema": [
+    {
+      "id": 2,
+      "code": "CI-1832",
+      "nameFirm": "A",
+      "date": "2021-09-01",
+      "ticket": 45
+    },
+    {
+      "id": 3,
+      "code": "CI-1242",
+      "nameFirm": "A",
+      "date": "2021-09-01",
+      "ticket": 45
+    },
+    {
+      "code": "CI-1111",
+      "nameFirm": "waiter",
+      "date": "2021-08-29",
+      "ticket": "6",
+      "id": 4
     }
   ]
 }

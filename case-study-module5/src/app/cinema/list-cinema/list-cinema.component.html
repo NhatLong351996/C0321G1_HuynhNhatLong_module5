@@ -1,0 +1,57 @@
+<div class=" container">
+  <div class="row">
+    <!--<div th:insert="~{/home/home::leftbar}"></div>-->
+    <div>
+      <!--search-->
+      <h3 class="text-decoration-underline">List Cinema</h3>
+      <a routerLink="/cinema/create" >
+        <button type="button" class="btn btn-secondary mt-2 mb-3">Create New Cinema</button>
+      </a>
+      <div class="row ">
+        <div class="col-9"><input class="form-control mb-3" type="search" placeholder="Search" aria-label="Search"
+                                  name="search" [(ngModel)]="search"></div>
+        <div class="col-3">
+          <button class="btn btn-outline-secondary form-control" type="submit" (click)="searchByName()">🐝 Search</button>
+        </div>
+      </div>
+
+
+
+      <!-- body-->
+      <div class="table-responsive">
+        <table class="table table-hover table-striped">
+          <thead class="thead-dark text-center">
+          <th>No</th>
+          <th>NameFirm</th>
+          <th>Code</th>
+          <th>Edit</th>
+          <th>Delete</th>
+          <th>View</th>
+          </thead>
+          <tbody>
+          <tr *ngFor="let ob of cinemaList; index as i" class="text-center">
+            <td>{{i+1}}</td>
+            <td>{{ob.nameFirm}}</td>
+            <td>{{ob.code}}</td>
+            <td><a [routerLink]="['/cinema/edit',ob.id]">
+              <button type="button" class="btn btn-secondary" >Edit</button>
+            </a></td>
+            <td>
+              <a [routerLink]="['/cinema/delete',ob.id]">
+                <button type="button" class="btn btn-danger">
+                  Delete
+                </button>
+              </a>
+            </td>
+            <td><a [routerLink]="['/cinema/delete',ob.id]">
+              <button type="button" class="btn btn-warning">View</button>
+            </a></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
